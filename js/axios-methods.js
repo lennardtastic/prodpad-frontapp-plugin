@@ -24,6 +24,17 @@ var prodpadProducts = [{}]; //Array with objects
 var prodpadTags; //Array with objects
 var prodpadExternalLinks = [{}];; //Array with objects
 
+// When conversation is selected the input values should be updated
+Front.on('conversation', function (data) {
+  var conversation = data.conversation;
+  // triggered when a conversation is loaded
+  console.log(conversation.id);
+  console.log(conversation.link);
+
+  document.getElementById("inputLinkName").value = conversation.id;
+  document.getElementById("inputLinkUrl").value = conversation.link;
+});
+
 // Example of working payload
 var prodpadPostIdeaPayload = {
   description: 'Test by Lennard Description',
@@ -37,9 +48,6 @@ var prodpadPostIdeaPayload = {
     id: 7216
   }],
 };
-
-// Variables Frontapp
-var conversation;
 
 /**
  * Function for updating the payload variables
@@ -67,16 +75,7 @@ function prepareProdpadPayload() {
   prodpadPostIdeaPayload.external_links = prodpadExternalLinks;
 }
 
-// When conversation is selected the input values should be updated
-Front.on('conversation', function (data) {
-  conversation = data.conversation;
-  // triggered when a conversation is loaded
-  console.log(conversation.id);
-  console.log(conversation.link);
 
-  document.getElementById("inputLinkName").value = conversation.id;
-  document.getElementById("inputLinkUrl").value = conversation.link;
-});
 
 // Event Listeners
 document.getElementById('buttonSubmit').addEventListener('click', function () {
