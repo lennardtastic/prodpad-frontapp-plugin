@@ -38,6 +38,9 @@ var prodpadPostIdeaPayload = {
   }],
 };
 
+// Variables Frontapp
+var conversation;
+
 /**
  * Function for updating the payload variables
  */
@@ -64,10 +67,10 @@ function prepareProdpadPayload() {
   prodpadPostIdeaPayload.external_links = prodpadExternalLinks;
 }
 
-Front.on('panel_visible', function (visible) {
+front.on('panel_visible', function (visible) {
   // triggered when your plugin becomes visible or invisible
   // you can also test Front.visible
-  Front.on('conversation', function (data) {
+  front.on('conversation', function (data) {
     // triggered when a conversation is loaded
     document.getElementById("inputLinkName").value = conversation.id;
     document.getElementById("inputLinkUrl").value = conversation.link;
