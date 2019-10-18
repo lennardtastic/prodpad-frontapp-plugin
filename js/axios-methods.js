@@ -49,7 +49,7 @@ function updatePayloadVariables() {
   prodpadProducts[0].id = document.getElementById("selectProduct").value;
   prodpadExternalLinks[0].external_id = document.getElementById("inputLinkName").value
   prodpadExternalLinks[0].url = document.getElementById("inputLinkUrl").value
-  prodpadExternalLinks[0].name = 'prodpad';
+  prodpadExternalLinks[0].title = 'FrontApp Link';
 }
 
 /**
