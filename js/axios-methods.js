@@ -69,10 +69,11 @@ function prepareProdpadPayload() {
 
 // When conversation is selected the input values should be updated
 front.on('conversation', function (data) {
+  conversation = data.conversation;
   // triggered when a conversation is loaded
   console.log(conversation.id);
   console.log(conversation.link);
-  
+
   document.getElementById("inputLinkName").value = conversation.id;
   document.getElementById("inputLinkUrl").value = conversation.link;
 });
