@@ -151,8 +151,7 @@
       </div>
 
       <!-- Additional JavaScript for plugin-->
-      <script type="text/javascript" src="js/frontapp-methods.js" </script> <script type="text/javascript"
-          src="js/axios-methods.js"></script>
+      <script type="text/javascript" src="js/axios-methods.js"></script>
 
       <script>
           $('#settingsModal').on('shown.bs.modal', function () {
@@ -162,6 +161,17 @@
               var keyvar = document.getElementById("inputSettingsKey").value;
               console.log(keyvar);
               window.setLocalStorage("apikey", keyvar);
+          });
+      </script>
+      <script>
+          Front.on('conversation', function (data) {
+              var conversation = data.conversation;
+              // triggered when a conversation is loaded
+              console.log(conversation.id);
+              console.log(conversation.link);
+
+              document.getElementById("inputLinkName").value = conversation.id;
+              document.getElementById("inputLinkUrl").value = conversation.link;
           });
       </script>
   </body>
