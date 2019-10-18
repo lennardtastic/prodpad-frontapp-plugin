@@ -15,14 +15,6 @@ var bodyParameters = {
   key: "value"
 };
 
-//TODO Remove this part
-/*Prodpad IDs for each product
-var prodpadAskId = 62090;
-var prodpadAnalyzeId = 62091;
-var prodpadActId = 62092;
-var prodpadMobiletId = 62378;
-*/
-
 // List of Fields to be submitted
 var prodpadTitle; //String
 var prodpadDescription; //String
