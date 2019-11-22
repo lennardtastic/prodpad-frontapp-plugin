@@ -1,178 +1,173 @@
-  <!DOCTYPE html>
-  <html>
+<!DOCTYPE html>
+<html>
 
-  <head>
-      <!--JS INCLUDED-->
+<head>
+    <!--JS INCLUDED-->
 
-      <script type="text/javascript" src="js/prodpad-methods.js"></script>
-      <script type="text/javascript" src="js/generic-methods.js"></script>
-      <!--JS CDN-->
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="https://dl.frontapp.com/libs/frontjs.min.js"></script>
-      <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-      </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-      </script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-      </script>
-      <!--CSS-->
-      <link rel="stylesheet" type="text/css" href="css/main.css" />
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <!--Fonts-->
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  </head>
+    <script type="text/javascript" src="js/prodpad-methods.js"></script>
+    <script type="text/javascript" src="js/generic-methods.js"></script>
+    <!--JS CDN-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://dl.frontapp.com/libs/frontjs.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 
-  <body>
-      <div class="form-horizontal">
-          <fieldset>
+<body>
+    <div class="form-horizontal">
+        <fieldset>
 
-              <!-- Form Name -->
-              <legend>Form Name</legend>
+            <!-- Form Name -->
+            <legend>Form Name</legend>
 
-              <!-- Text input-->
-              <div class="form-group">
-                  <label class="col-md-4 control-label" for="inputIdeaTitle">💡Idea Title</label>
-                  <div class="col-md-4">
-                      <input id="inputIdeaTitle" name="inputIdeaTitle" type="text"
-                          placeholder="What is the name of your idea?" class="form-control input-md" required="">
-                      <span class="help-block"></span>
-                  </div>
-              </div>
+            <!-- Text input-->
+            <div class="form-group" id="inputFields">
+                <label class="col-md-4 control-label" for="inputIdeaTitle">💡Idea Title</label>
+                <div class="col-md-4">
+                    <input id="inputIdeaTitle" name="inputIdeaTitle" type="text" placeholder="What is the name of your idea?" class="form-control input-md" required="">
+                    <span class="help-block"></span>
+                </div>
+            </div>
 
-              <!-- Textarea -->
-              <div class="form-group">
-                  <label class="col-md-4 control-label" for="textAreaDescription">📝 Idea Description</label>
-                  <div class="col-md-4">
-                      <textarea class="form-control" id="textAreaDescription" name="textAreaDescription"
-                          placeholder="How would you describe the idea that you've having?"></textarea>
-                  </div>
-              </div>
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textAreaDescription">📝 Idea Description</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" id="textAreaDescription" name="textAreaDescription" placeholder="How would you describe the idea that you've having?"></textarea>
+                </div>
+            </div>
 
-              <!-- Textarea -->
-              <div class="form-group">
-                  <label class="col-md-4 control-label" for="textAreaProblem">⛔️ Problem to Solve</label>
-                  <div class="col-md-4">
-                      <textarea class="form-control" id="textAreaProblem" name="textAreaProblem"
-                          placeholder="What problem are you trying to solve?"></textarea>
-                  </div>
-              </div>
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textAreaProblem">⛔️ Problem to Solve</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" id="textAreaProblem" name="textAreaProblem" placeholder="What problem are you trying to solve?"></textarea>
+                </div>
+            </div>
 
-              <!-- Textarea -->
-              <div class="form-group">
-                  <label class="col-md-4 control-label" for="textAreaValue">💰 Value for Solving</label>
-                  <div class="col-md-4">
-                      <textarea class="form-control" id="textAreaValue" name="textAreaValue"
-                          placeholder="What value would it provide if it were solved?"></textarea>
-                  </div>
-              </div>
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textAreaValue">💰 Value for Solving</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" id="textAreaValue" name="textAreaValue" placeholder="What value would it provide if it were solved?"></textarea>
+                </div>
+            </div>
 
-              <!-- Select Basic -->
-              <div class="form-group">
-                  <label class="col-md-4 control-label" for="selectProduct">Add Products...</label>
-                  <div class="col-md-4">
-                      <select id="selectProduct" name="selectProduct" class="form-control">
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectProduct">Add Products...</label>
+                <div class="col-md-4">
+                    <select id="selectProduct" name="selectProduct" class="form-control">
                           <option value="62090">ASK</option>
                           <option value="62091">ANALYZE</option>
                           <option value="62092">ACT</option>
                           <option value="62378">MOBILE</option>
                       </select>
-                  </div>
-              </div>
+                </div>
+            </div>
 
-              <!-- Text input-->
-              <div class="form-group">
-                  <label class="col-md-4 control-label" for="inputLinkName">Conversation ID</label>
-                  <div class="col-md-4">
-                      <input id="inputLinkName" name="inputLinkName" type="text" placeholder=""
-                          class="form-control input-md" required="">FrontApp Permalink</input>
-                      <span class="help-block">*please do not alter this</span>
-                  </div>
-              </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="inputLinkName">Conversation ID</label>
+                <div class="col-md-4">
+                    <input id="inputLinkName" name="inputLinkName" type="text" placeholder="" class="form-control input-md" required="">FrontApp Permalink</input>
+                    <span class="help-block">*please do not alter this</span>
+                </div>
+            </div>
 
-              <!-- Text input-->
-              <div class="form-group">
-                  <label class="col-md-4 control-label" for="inputLinkUrl">Conversation Link</label>
-                  <div class="col-md-4">
-                      <input id="inputLinkUrl" name="inputLinkUrl" type="text" placeholder=""
-                          class="form-control input-md" required="" readonly>
-                      <span class="help-block">*please do not alter this</span>
-                  </div>
-              </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="inputLinkUrl">Conversation Link</label>
+                <div class="col-md-4">
+                    <input id="inputLinkUrl" name="inputLinkUrl" type="text" placeholder="" class="form-control input-md" required="" readonly>
+                    <span class="help-block">*please do not alter this</span>
+                </div>
+            </div>
 
-              <!-- Button -->
-              <div class="form-group">
-                  <label class="col-md-4 control-label" for="buttonSubmit"></label>
-                  <div class="col-md-4">
-                      <button id="buttonSubmit" name="buttonSubmit" class="btn btn-primary">Submit Idea</button>
-                  </div>
-              </div>
+            <!-- Submit Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="buttonSubmit"></label>
+                <div class="col-md-4">
+                    <button id="buttonSubmit" name="buttonSubmit" class="btn btn-primary">Submit Idea</button>
+                </div>
+            </div>
 
-          </fieldset>
-      </div>
-      <!-- Button trigger modal -->
-      <div class="form-group">
-          <label class="col-md-8 control-label" for="buttonSubmit"></label>
-          <div class="col-md-8">
-              <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#settingsModal"
-                  id="settingsButton">
+            <!-- Reset Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="buttonReset"></label>
+                <div class="col-md-4">
+                    <button id="buttonReset" name="buttonReset" class="btn btn-warning">Reset Fields</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </div>
+    <!-- Button trigger modal -->
+    <div class="form-group">
+        <label class="col-md-8 control-label" for="buttonSubmit"></label>
+        <div class="col-md-8">
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#settingsModal" id="settingsButton">
                   ⚙️ Settings
               </button>
-          </div>
-      </div>
+        </div>
+    </div>
 
-      <!-- Modal -->
-      <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="settingsModalLabel">Plugin Settings</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalLabel">Plugin Settings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                       </button>
-                  </div>
-                  <div class="modal-body">
-                      <input id="inputSettingsKey" name="inputIdeaTitle" type="text"
-                          placeholder="Please add your API key here" class="form-control input-md">
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary" id="buttonSaveChanges">Save changes</button>
-                  </div>
-              </div>
-          </div>
-      </div>
+                </div>
+                <div class="modal-body">
+                    <input id="inputSettingsKey" name="inputIdeaTitle" type="text" placeholder="Please add your API key here" class="form-control input-md">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="buttonSaveChanges">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      <!-- Additional JavaScript for plugin-->
-      <script type="text/javascript" src="js/axios-methods.js"></script>
+    <!-- Additional JavaScript for plugin-->
+    <script type="text/javascript" src="js/axios-methods.js"></script>
 
-      <script>
-          $('#settingsModal').on('shown.bs.modal', function () {
-              $('#myInput').trigger('focus')
-          });
-          document.getElementById("buttonSaveChanges").addEventListener("click", function () {
-              var keyvar = document.getElementById("inputSettingsKey").value;
-              console.log(keyvar);
-              window.setLocalStorage("apikey", keyvar);
-          });
-      </script>
-      <script>
-          Front.on('conversation', function (data) {
-              var conversation = data.conversation;
-              // triggered when a conversation is loaded
-              console.log(conversation.id);
-              console.log(conversation.link);
+    <script>
+        $('#settingsModal').on('shown.bs.modal', function() {
+            $('#myInput').trigger('focus')
+        });
+        document.getElementById("buttonSaveChanges").addEventListener("click", function() {
+            var keyvar = document.getElementById("inputSettingsKey").value;
+            console.log(keyvar);
+            window.setLocalStorage("apikey", keyvar);
+        });
+    </script>
+    <script>
+        Front.on('conversation', function(data) {
+            var conversation = data.conversation;
+            // triggered when a conversation is loaded
+            console.log(conversation.id);
+            console.log(conversation.link);
 
-              document.getElementById("inputLinkName").value = conversation.id;
-              document.getElementById("inputLinkUrl").value = conversation.link;
-          });
-      </script>
-  </body>
+            document.getElementById("inputLinkName").value = conversation.id;
+            document.getElementById("inputLinkUrl").value = conversation.link;
+        });
+    </script>
+</body>
 
-  </html>
+</html>
